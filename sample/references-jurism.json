@@ -1,0 +1,96 @@
+[
+  {
+    "id": "harlow-v-quill-2019",
+    "type": "legal_case",
+    "title": "Harlow v. Quill Data Services",
+    "authority": "Westmarch Superior Court",
+    "container-title": "Westmarch Reports",
+    "volume": "412",
+    "page": "201",
+    "issued": {
+      "date-parts": [
+        [
+          2019,
+          3,
+          14
+        ]
+      ]
+    },
+    "jurisdiction": "us"
+  },
+  {
+    "id": "harlow-v-quill-2022",
+    "type": "legal_case",
+    "title": "Harlow v. Quill Data Services",
+    "authority": "Westmarch Court of Appeals",
+    "container-title": "Westmarch Appellate Reports",
+    "volume": "88",
+    "page": "1043",
+    "issued": {
+      "date-parts": [
+        [
+          2022,
+          6,
+          2
+        ]
+      ]
+    },
+    "jurisdiction": "us"
+  },
+  {
+    "id": "model-breach-act-2021",
+    "type": "legislation",
+    "title": "Model Breach Notification Act",
+    "container-title": "Westmarch Code",
+    "issued": {
+      "date-parts": [
+        [
+          2021
+        ]
+      ]
+    },
+    "jurisdiction": "us"
+  },
+  {
+    "id": "okafor-2020",
+    "type": "article-journal",
+    "title": "Timing Is Everything: Delay Defenses in Breach Notice Law",
+    "author": [
+      {
+        "family": "Okafor",
+        "given": "Adaeze"
+      }
+    ],
+    "container-title": "Journal of Imaginary Privacy Law",
+    "volume": "7",
+    "page": "61-104",
+    "issued": {
+      "date-parts": [
+        [
+          2020
+        ]
+      ]
+    }
+  },
+  {
+    "id": "lindqvist-2018",
+    "type": "book",
+    "title": "Notice and Its Discontents",
+    "author": [
+      {
+        "family": "Lindqvist",
+        "given": "Tove"
+      }
+    ],
+    "publisher": "Example University Press",
+    "publisher-place": "Springfield",
+    "edition": "2",
+    "issued": {
+      "date-parts": [
+        [
+          2018
+        ]
+      ]
+    }
+  }
+]

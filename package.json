@@ -1,0 +1,8 @@
+{
+  "name": "pandoc-legal-paper-build",
+  "private": true,
+  "type": "module",
+  "description": "Helper for rendering CSL-M citations with citeproc-js",
+  "license": "Apache-2.0",
+  "dependencies": { "citeproc": "2.4.63" }
+}

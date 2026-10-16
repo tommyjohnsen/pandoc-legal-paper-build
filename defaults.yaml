@@ -1,0 +1,10 @@
+# Shared pandoc options for every output. Citation options are set in the Makefile
+# because the two pipelines process citations differently.
+from: markdown
+toc: false
+number-sections: true
+variables:
+  geometry: margin=1in
+  fontsize: 12pt
+  linestretch: 2
+pdf-engine: xelatex
