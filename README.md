@@ -13,6 +13,8 @@ two citation pipelines side by side:
 unified diff and a side-by-side file, so you can see exactly where the two
 disagree.
 
+`make test` verifies the Juris-M PDF and bibliography handling.
+
 ## Quick start
 
 ```sh

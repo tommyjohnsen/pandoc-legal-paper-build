@@ -13,7 +13,7 @@ jobs:
       - name: Build image
         run: docker build -t paper-build .
       - name: Build both pipelines and the citation diff
-        run: docker run --rm -u "$(id -u):$(id -g)" -e HOME=/tmp -v "$PWD":/work paper-build make all
+        run: docker run --rm -u "$(id -u):$(id -g)" -e HOME=/tmp -v "$PWD":/work paper-build make all test
       - name: Show citation diff
         run: cat build/compare/citations.diff || true
       - uses: actions/upload-artifact@v4

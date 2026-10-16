@@ -26,7 +26,7 @@ LOCALE_URL        ?= https://raw.githubusercontent.com/citation-style-language/l
 S := $(BUILD)/styles
 COMMON := --standalone --metadata link-citations=false
 
-.PHONY: all zotero jurism compare styles clean
+.PHONY: all zotero jurism compare styles test clean
 all: zotero jurism compare
 
 styles: $(S)/a.csl $(S)/jm-indigobook.csl $(S)/locales-en-US.xml $(S)/modules/.ok
@@ -65,6 +65,16 @@ $(BUILD)/compare/citations.diff: $(BUILD)/compare/zotero.txt $(BUILD)/compare/ju
 	diff -u --label zotero --label jurism $^ > $@ || true
 	diff -y -W 200 $^ > $(BUILD)/compare/side-by-side.txt || true
 	@echo "wrote $@ and $(BUILD)/compare/side-by-side.txt"
+
+test: $(BUILD)/jurism/paper.pdf
+	test -s $<
+	@mkdir -p $(BUILD)/test
+	$(PANDOC) $(SRC) -d defaults.yaml $(COMMON) -M rendered=$(BUILD)/jurism/citations.json --lua-filter filters/inject-citations.lua -t latex -o $(BUILD)/test/jurism.tex
+	grep -Fq '\bibitem' $(BUILD)/test/jurism.tex
+	$(PANDOC) $(SRC) -d defaults.yaml $(COMMON) -M rendered=tests/empty-bibliography.json --lua-filter filters/inject-citations.lua -t latex -o $(BUILD)/test/empty.tex
+	! grep -q CSLReferences $(BUILD)/test/empty.tex
+	$(PANDOC) $(SRC) -d defaults.yaml $(COMMON) -M rendered=tests/empty-bibliography.json --lua-filter filters/inject-citations.lua -o $(BUILD)/test/empty.pdf
+	test -s $(BUILD)/test/empty.pdf
 
 clean:
 	rm -rf $(BUILD)
