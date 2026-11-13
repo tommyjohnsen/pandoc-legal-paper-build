@@ -31,7 +31,7 @@ Word version; this tool does not infer it from the PDF.
 
 ## Reproducible setup and demonstration
 
-Native bootstrap targets Linux x86_64 with Python 3.12.3, pip, dpkg-deb,
+Native bootstrap targets Linux x86_64 with Python 3.12.3, pip, curl, dpkg-deb,
 fontconfig, libgraphite2, OpenSSL 3 and libstdc++ available. It installs pinned
 Pandoc 3.6.4, Tectonic 0.15.0, Node 22.14.0, citeproc 2.4.63 and PyMuPDF 1.26.6
 under ignored local directories, validating archive/wheel hashes. No sudo:

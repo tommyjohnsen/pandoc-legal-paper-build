@@ -1,10 +1,39 @@
 {
-  "runtime": {"python": "3.12.3", "node": "22.14.0", "pandoc": "3.6.4", "tectonic": "0.15.0", "citeproc": "2.4.63", "pymupdf": "1.26.6"},
-  "tex_bundle": {"url": "https://relay.fullyjustified.net/default_bundle_v33.tar", "id": "6ffe055852f8faf66c0acbe1a7fb27f87b869a90bad1204f3bf4d9683f597c7c"},
+  "runtime": {
+    "python": "3.12.3",
+    "node": "22.14.0",
+    "pandoc": "3.6.4",
+    "tectonic": "0.15.0",
+    "citeproc": "2.4.63",
+    "pymupdf": "1.26.6"
+  },
+  "tex_bundle": {
+    "url": "https://relay.fullyjustified.net/default_bundle_v33.tar",
+    "id": "6ffe055852f8faf66c0acbe1a7fb27f87b869a90bad1204f3bf4d9683f597c7c"
+  },
   "archives": [
-    {"filename": "pandoc.tar.gz", "url": "https://github.com/jgm/pandoc/releases/download/3.6.4/pandoc-3.6.4-linux-amd64.tar.gz", "sha256": "5def6e1ff535e397becce292ee97767a947306150b9fb1488003b67ac3417c5e"},
-    {"filename": "tectonic.tar.gz", "url": "https://github.com/tectonic-typesetting/tectonic/releases/download/tectonic%400.15.0/tectonic-0.15.0-x86_64-unknown-linux-gnu.tar.gz", "sha256": "875fbbc9ab48560d7776088c608e0beee49197b57ab4a2f6c5385b2c661c842f"},
-    {"filename": "node.tar.xz", "url": "https://nodejs.org/dist/v22.14.0/node-v22.14.0-linux-x64.tar.xz", "sha256": "69b09dba5c8dcb05c4e4273a4340db1005abeafe3927efda2bc5b249e80437ec"},
-    {"filename": "fonts-liberation.deb", "url": "https://mirror.hetzner.com/ubuntu/packages/pool/main/f/fonts-liberation/fonts-liberation_2.1.5-3_all.deb", "sha256": "065c2ab1abc9108b17d401016dc594b79750904390f095845c93bb06e1153acc"}
+    {
+      "filename": "pandoc.tar.gz",
+      "url": "https://github.com/jgm/pandoc/releases/download/3.6.4/pandoc-3.6.4-linux-amd64.tar.gz",
+      "sha256": "5def6e1ff535e397becce292ee97767a947306150b9fb1488003b67ac3417c5e"
+    },
+    {
+      "filename": "tectonic.tar.gz",
+      "url": "https://github.com/tectonic-typesetting/tectonic/releases/download/tectonic%400.15.0/tectonic-0.15.0-x86_64-unknown-linux-gnu.tar.gz",
+      "sha256": "875fbbc9ab48560d7776088c608e0beee49197b57ab4a2f6c5385b2c661c842f"
+    },
+    {
+      "filename": "node.tar.xz",
+      "url": "https://nodejs.org/dist/v22.14.0/node-v22.14.0-linux-x64.tar.xz",
+      "sha256": "69b09dba5c8dcb05c4e4273a4340db1005abeafe3927efda2bc5b249e80437ec"
+    },
+    {
+      "filename": "fonts-liberation.deb",
+      "url": "https://mirror.hetzner.com/ubuntu/packages/pool/main/f/fonts-liberation/fonts-liberation_2.1.5-3_all.deb",
+      "sha256": "065c2ab1abc9108b17d401016dc594b79750904390f095845c93bb06e1153acc",
+      "mirrors": [
+        "https://archive.ubuntu.com/ubuntu/pool/main/f/fonts-liberation/fonts-liberation_2.1.5-3_all.deb"
+      ]
+    }
   ]
 }

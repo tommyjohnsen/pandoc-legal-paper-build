@@ -4,7 +4,7 @@ FROM --platform=linux/amd64 python:3.12.3-slim-bookworm@sha256:fd3817f3a855f6c2a
 RUN rm -f /etc/apt/sources.list.d/debian.sources \
  && printf 'deb [check-valid-until=no] https://snapshot.debian.org/archive/debian/20240501T000000Z bookworm main\n' > /etc/apt/sources.list \
  && apt-get update \
- && apt-get install -y --no-install-recommends make ca-certificates fontconfig libgraphite2-3 libssl3 libstdc++6 diffutils dpkg \
+ && apt-get install -y --no-install-recommends make curl ca-certificates fontconfig libgraphite2-3 libssl3 libstdc++6 diffutils dpkg \
  && rm -rf /var/lib/apt/lists/*
 WORKDIR /work
 COPY . /work

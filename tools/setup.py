@@ -9,18 +9,30 @@ import platform
 import subprocess
 import sys
 import tarfile
-import urllib.request
 import xml.etree.ElementTree as E
 
 ROOT = Path(__file__).resolve().parents[1]
 DEST = ROOT / '.tools'
 
 
-def fetch(url, sha, target):
+def fetch(url, sha, target, mirrors=()):
     if target.exists() and hashlib.sha256(target.read_bytes()).hexdigest() == sha:
         return
     temp = target.with_suffix(target.suffix + '.partial')
-    urllib.request.urlretrieve(url, temp)
+    failures = []
+    for candidate in [url, *mirrors]:
+        print(f'Fetching {candidate}', flush=True)
+        try:
+            # curl's IPv4 mode avoids broken IPv6 routes on hosted runners.
+            # The content must still pass the upstream archive checksum below.
+            subprocess.run(['curl', '--ipv4', '--fail', '--location', '--silent', '--show-error',
+                            '--connect-timeout', '20', '--max-time', '120', '--retry', '2',
+                            '--output', temp, candidate], check=True)
+            break
+        except subprocess.CalledProcessError as e:
+            failures.append(f'{candidate}: exit {e.returncode}')
+    else:
+        raise ValueError('Could not fetch pinned dependency: ' + '; '.join(failures))
     if hashlib.sha256(temp.read_bytes()).hexdigest() != sha:
         temp.unlink()
         raise ValueError(f'Checksum mismatch for {url}; no unverified file installed')
@@ -34,7 +46,7 @@ def main():
     lock = json.loads((ROOT / 'tools/dependencies.lock.json').read_text())
     for artifact in lock['archives']:
         archive = DEST / artifact['filename']
-        fetch(artifact['url'], artifact['sha256'], archive)
+        fetch(artifact['url'], artifact['sha256'], archive, artifact.get('mirrors', []))
         if archive.suffix == '.deb':
             subprocess.run(['dpkg-deb', '-x', archive, DEST / 'fonts'], check=True)
         else:
