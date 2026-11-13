@@ -1,4 +1,6 @@
-# Shared pandoc options for every output. Citation options are set in the Makefile
+# PROVENANCE: modified-by codex/gpt-6; 2026-11-13; commit in Git and .provenance/ledger.jsonl.
+# Legacy demonstration settings, not school requirements. Academic uses CLI settings.
+# Shared pandoc options for legacy output. Citation options are set in the Makefile
 # because the two pipelines process citations differently.
 from: markdown
 toc: false
@@ -7,4 +9,4 @@ variables:
   geometry: margin=1in
   fontsize: 12pt
   linestretch: 2
-pdf-engine: xelatex
+pdf-engine: tectonic

@@ -1,114 +1,143 @@
-# pandoc-legal-paper-build
+<!-- PROVENANCE: modified-by codex/gpt-6; 2026-11-13; commit in Git and .provenance/ledger.jsonl. -->
+# Academic legal papers from Markdown
 
-A reusable Pandoc build template for legal and academic papers. Write once in
-Markdown, cite with keys from a reference manager, and build DOCX and PDF with
-two citation pipelines side by side:
+Build **native, editable DOCX footnotes and PDF footnotes from the same resolved
+citation document**. Citation-only notes, explanatory Markdown notes, multiple
+authorities, pinpoints, prefixes/suffixes, and conservative subsequent citations
+are supported. Invalid metadata, unknown keys and unsupported citation syntax
+stop the academic build with corrective diagnostics.
 
-| Pipeline | Input | Citation engine | Style |
-|---|---|---|---|
-| **A: Zotero** | Zotero CSL-JSON (or BibLaTeX) export | Pandoc's built-in citeproc | a CSL 1.0 style from the official CSL repository (default `bluebook-inline`, override with `STYLE_A=`) |
-| **B: Juris-M** | Juris-M CSL-JSON export | [citeproc-js](https://github.com/Juris-M/citeproc-js) (Node) | Juris-M **JM Indigo Book** CSL-M style plus Juris-M jurisdiction style modules |
+This is formatting automation, **not automatic Bluebook compliance or
+publication readiness**. A human must review the required Bluebook edition,
+every authority's support for the proposition, pinpoints and current treatment.
+See the [syntax/limitations matrix](docs/academic.md) and the
+[human review checklist](docs/citation-review.md).
 
-`make compare` extracts the rendered citations from both pipelines and writes a
-unified diff and a side-by-side file, so you can see exactly where the two
-disagree.
+## Capstone requirements versus choices
 
-`make test` verifies the Juris-M PDF and bibliography handling.
+The supplied M.J. Capstone guide calls for 30–35 double-spaced pages, Times New
+Roman, approximately 7,300–8,500 words excluding footnotes, and academic
+Bluebook-style footnotes. Its approximate 100–175 footnotes is **guidance, not a
+quota**. Font size and margins were not specified. The example choices of 12pt
+body, 10pt notes, one-inch margins and single-spaced notes are manuscript
+settings, **not UW requirements**. Confirm note spacing and other unstated
+details with your program. Body/note font sizes and margins are configurable;
+main-text/footnote spacing is currently fixed at double/single, respectively.
 
-## Quick start
+`counts.json` reports main-text words separately from footnote words;
+`verification.json` reports actual PDF pages. A word count does not guarantee a
+page count. Microsoft Word pagination requires opening the DOCX in your intended
+Word version; this tool does not infer it from the PDF.
 
-```sh
-docker build -t paper-build .
-docker run --rm -u "$(id -u):$(id -g)" -e HOME=/tmp -v "$PWD":/work paper-build make all
+## Reproducible setup and demonstration
+
+Native bootstrap targets Linux x86_64 with Python 3.12.3, pip, dpkg-deb,
+fontconfig, libgraphite2, OpenSSL 3 and libstdc++ available. It installs pinned
+Pandoc 3.6.4, Tectonic 0.15.0, Node 22.14.0, citeproc 2.4.63 and PyMuPDF 1.26.6
+under ignored local directories, validating archive/wheel hashes. No sudo:
+
+```bash
+python3 tools/setup.py
+source tools/env.sh
+make test
+make demo
+make integration
 ```
 
-Outputs:
+First PDF use needs network access to Tectonic's versioned v33 package bundle;
+its immutable bundle identity is checked. Preserve build/.cache for subsequent
+offline builds of the same inputs. Setup downloads are locked in
+tools/dependencies.lock.json, package-lock.json, and requirements.txt;
+styles, locale and the small-cap font are vendored with verified checksums.
+The [container](Dockerfile) also pins its base image digest and Debian snapshot.
 
+Alternatively:
+
+```bash
+docker build --platform linux/amd64 -t paper-build .
+mkdir -p build
+docker run --rm --user "$(id -u):$(id -g)" -e HOME=/tmp \
+  -v "$PWD/build:/work/build" paper-build make test demo integration
 ```
-build/zotero/paper.docx  build/zotero/paper.pdf
-build/jurism/paper.docx  build/jurism/paper.pdf  build/jurism/citations.json
-build/compare/citations.diff  build/compare/side-by-side.txt
+
+The image contains the repository version copied at image build time; rebuild
+the image after editing source. It includes only open demo fonts. `make demo`
+explicitly uses **Liberation Serif**, so it demonstrates citations and pagination
+but **does not satisfy the guide's Times New Roman requirement**. A Capstone
+build requires a lawfully installed Times New Roman font, not a silent
+substitution. PDF small capitals use the vendored TeX Gyre Termes companion font;
+DOCX retains native smallCaps properties in the selected manuscript font.
+
+The [committed synthetic demonstration](demonstration/README.md) includes DOCX,
+PDF, citation/word/page reports and page images. All authorities are fictional.
+
+## Build a private manuscript
+
+Keep private sources and reference exports outside this repository, and use a
+fresh output directory for every candidate. After native setup:
+
+```bash
+source tools/env.sh
+python3 scripts/build_academic.py \
+  --source /private/paper.md --bib /private/cited-references.json \
+  --output /private/exports/candidate-001 \
+  --font 'Times New Roman' --size 12 --note-size 10 --margin 1
 ```
 
-Without Docker you need `pandoc` (3.x), a LaTeX engine (`xelatex`), Node 18+,
-`make`, `curl` and `diff`. Targets: `make zotero`, `make jurism`, `make compare`,
-`make clean`. Point at your own files with
-`make SRC=paper.md A_BIB=my-zotero.json B_JSON=my-jurism.json`.
+All sizes/margins in that command are adjustable choices. The command refuses an
+existing output directory, even after a partial build. It never rewrites Markdown,
+the library export, or a previous DOCX/PDF. Outputs contain the original metadata
+in citations.json; treat the entire output directory as private for a real
+manuscript. Never commit Capstone drafts, licensed research, credentials or
+personal reference libraries. Only fictional sample/ and deliberately curated
+demonstration/ materials belong in version control.
 
-The `sample/` folder holds a short invented paper and invented references in
-three formats: `references-zotero.json` (CSL-JSON), `references-zotero.bib`
-(BibLaTeX, usable as `A_BIB`) and `references-jurism.json` (CSL-JSON with
-Juris-M `jurisdiction` fields). All parties, courts, reporters, statutes,
-authors and works in the sample are fictional.
+Equivalent Make settings: `make academic ACADEMIC_SRC=... ACADEMIC_BIB=...
+OUT=... FONT='Times New Roman' SIZE=12 NOTE_SIZE=10 MARGIN=1`. The default
+`make` invokes the academic build, which fails if Times New Roman is absent.
 
-## Why two engines
+## Zotero and Juris-M remain available
 
-The Indigo Book style published by the Juris-M project is a **CSL-M** style
-(`version="1.1mlz1"`). CSL-M extends CSL with features Pandoc's citeproc does
-not implement, including `<conditions>` blocks, jurisdiction-specific style
-modules (`juris-us-IndigoTemp.csl` and friends), and multilingual and
-court-hierarchy handling. Pandoc refuses the file outright
-(`CiteprocParseError: unknown element "conditions"`).
+| Route | Use and limits |
+|---|---|
+| Academic + Zotero CSL JSON | New footnote workflow. Export the relevant collection; supply all required legal metadata. Plain CSL JSON often needs legal-field repair. |
+| Academic + Juris-M CSL JSON | Same shared footnotes, preserving legal fields and original source type in the audit. This CSL 1.0 academic style does **not** apply CSL-M jurisdiction modules, court hierarchies or multilingual rules. |
+| Legacy A: make zotero | Pandoc citeproc, locked community **bluebook-inline**; inline citations/bibliography, incomplete legal metadata rendering. **Not an equivalent substitute for academic footnotes.** CSL JSON or BibLaTeX accepted. |
+| Legacy B: make jurism | citeproc-js, locked JM Indigo Book CSL-M plus US modules; inline citations/bibliography. Notes, author modes, prefixes and ambiguous suffixes now fail clearly. Not the academic manuscript path. |
 
-So:
+In Zotero/Juris-M choose **Export Collection → CSL JSON**. Better CSL JSON can
+provide stable keys. In Markdown, `[@key, p. 214]` must match the item's id.
+The academic path accepts CSL JSON only, not BibLaTeX; it does not fabricate
+missing court, jurisdiction, edition or statutory metadata.
 
-* Pipeline A uses Pandoc citeproc with the best available CSL 1.0 style. No
-  CSL 1.0 Indigo Book style exists in the official CSL repository, so the
-  default is the community `bluebook-inline` style. It is approximate: for
-  example it omits the court and year for cases and the code name for statutes.
-* Pipeline B renders citations with citeproc-js, the engine Juris-M itself
-  uses, which loads the CSL-M style and its jurisdiction modules. The rendered
-  citations are injected into the Pandoc document by
-  `filters/inject-citations.lua`. This pipeline handles in-text citations and
-  the bibliography; footnote styles and Pandoc-specific citation syntax such as
-  author-suppression are not mapped yet. Locators are read from the citation
-  suffix (`p.`, `sec.`, `§`, `para.`, `n.`; plain numbers default to pages).
+Legacy commands, using fresh build directories:
 
-**Neither pipeline produces publication-ready legal citations.** Always do a
-manual citation-format review pass against the style guide you are required to
-follow.
+```bash
+make legacy legacy-test BUILD=build/legacy-001
+# Individual routes: make zotero / make jurism / make compare
+# Legacy inputs: SRC=paper.md A_BIB=zotero.json B_JSON=jurism.json
+```
 
-## Exporting from Zotero / Juris-M
+`make compare` compares the two **legacy** engines, not academic DOCX/PDF
+parity. Academic parity is tested by scripts/verify_outputs.py. Legacy style
+sources are locked in tools/styles.lock.json; arbitrary STYLE_A overrides
+are no longer accepted as pinned builds. Style changes require a deliberate
+source/checksum update and renewed tests.
 
-* **Zotero:** select the collection, choose *Export Collection…*, pick the
-  *CSL JSON* format and save it as your `A_BIB` file. A *BibLaTeX* export also
-  works for pipeline A. If you use the Better BibTeX plugin, its *Better CSL
-  JSON* format gives stable citation keys and can keep the export updated
-  automatically.
-* **Juris-M:** export the same way with the *CSL JSON* format and use the file
-  as `B_JSON`. Juris-M keeps legal metadata (jurisdiction, court) in fields
-  that only its own export writes; a plain Zotero export of the same items will
-  not contain them, which is one source of differences in `make compare`.
-* Citation keys in the Markdown (`[@key, 214]`) must match the `id` field of the
-  exported entries.
+## Evidence and licenses
 
-## Third-party styles and licenses
+`make test` checks syntax, short forms, failure diagnostics, metadata, word
+separation, formatting choices, non-overwriting behavior and vendor hashes.
+`make integration` builds the synthetic corpus in two layouts plus a note
+spanning pages, inspects DOCX XML, compares PDF reference numbers and complete
+footnote text, checks page dimensions/bounds, and renders all pages for human
+visual inspection. Both commands are in CI. A fresh integration output can be
+selected with `INTEGRATION_OUT=build/another-run make integration`.
 
-The style files are downloaded at build time from pinned commits and are
-**not** part of this repository:
-
-* **JM Indigo Book** (`jm-indigobook.csl`) from
-  [Juris-M/jm-styles](https://github.com/Juris-M/jm-styles), and US
-  jurisdiction modules from
-  [Juris-M/style-modules](https://github.com/Juris-M/style-modules), by Frank
-  Bennett and Juris-M contributors. Licensed under
-  [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/). The style
-  implements rules from [The Indigo Book](https://indigobook.github.io/),
-  a community-made, openly licensed restatement of US legal citation rules.
-* **Pipeline A style** (default `bluebook-inline.csl`) from the
-  [CSL styles repository](https://github.com/citation-style-language/styles),
-  community-made, licensed under
-  [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/).
-* **en-US locale** from the
-  [CSL locales repository](https://github.com/citation-style-language/locales),
-  CC BY-SA 3.0.
-* **citeproc-js** (npm package `citeproc`) is installed at build time; it is
-  dual licensed CPAL-1.0 / AGPL-1.0 and is not distributed with this template.
-
-These styles are community-maintained and not official publications of any
-citation manual.
-
-## License
-
-The template itself (Makefile, filters, scripts, sample, CI) is licensed under
-the Apache License 2.0. See `LICENSE`.
+See [test results](docs/test-results.md), [document record](docs/document-record.md)
+and [third-party notices](vendor/NOTICE.md). The template is Apache-2.0;
+the citation styles/derivative are CC BY-SA 3.0 and fonts keep their own licenses.
+No licensed Bluebook text or real research library is included. Codex authorship
+is recorded in .provenance/ledger.jsonl; no independent citation or code-review
+approval is implied. Main-branch merge/release still requires the mandated
+independent reviewer approvals at the exact proposed commit.

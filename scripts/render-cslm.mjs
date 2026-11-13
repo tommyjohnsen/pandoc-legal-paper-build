@@ -1,3 +1,4 @@
+// PROVENANCE: modified-by codex/gpt-6; 2026-11-13; commit in Git and .provenance/ledger.jsonl.
 // Render the citations of a Pandoc document with citeproc-js, which understands
 // CSL-M styles (version="1.1mlz1") and loads jurisdiction style modules.
 // Usage: node render-cslm.mjs <pandoc-ast.json> <csl-json> <style.csl> <locale.xml> <modules-dir> <out.json>
@@ -16,6 +17,10 @@ const stringify = (inl) => (inl || []).map((x) =>
 
 const LABELS = { 'p.': 'page', 'pp.': 'page', 'sec.': 'section', 'secs.': 'section', '§': 'section', '§§': 'section', 'para.': 'paragraph', 'n.': 'note' };
 function locatorOf(suffix) {
+  const raw = stringify(suffix).trim().replace(/^,\s*/, '');
+  if (raw && !/^(?:(p\.|pp\.|sec\.|secs\.|§§|§|para\.|n\.)\s*)?\d[\dA-Za-z.()–-]*$/.test(raw)) {
+    throw Error(`Legacy Juris-M cannot map suffix "${raw}". Use the academic build for validated locators and suffixes.`);
+  }
   const m = stringify(suffix).trim().replace(/^,\s*/, '').match(/^(?:(p\.|pp\.|sec\.|secs\.|§§|§|para\.|n\.)\s*)?(.*)$/);
   if (!m || !m[2]) return {};
   return { label: LABELS[m[1]] || 'page', locator: m[2].replace(/--/g, '\u2013') };
@@ -26,7 +31,13 @@ const clusters = [];
 (function walk(n) {
   if (Array.isArray(n)) return n.forEach(walk);
   if (!n || typeof n !== 'object') return;
+  if (n.t === 'Note') throw Error('Legacy Juris-M does not support footnotes. Use make academic.');
   if (n.t === 'Cite') {
+    for (const c of n.c[0]) {
+      if (c.citationMode.t !== 'NormalCitation' || c.citationPrefix.length) {
+        throw Error(`Legacy Juris-M cannot map mode/prefix for @${c.citationId}; use make academic or explanatory prose.`);
+      }
+    }
     clusters.push(n.c[0].map((c) => ({ id: c.citationId, ...locatorOf(c.citationSuffix) })));
   }
   Object.values(n).forEach(walk);

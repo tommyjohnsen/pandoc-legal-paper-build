@@ -1,0 +1,39 @@
+[
+  {
+    "id": "case", "type": "legal_case", "title": "Harlow v. Quill Data Services",
+    "title-short": "Harlow", "authority": "Westmarch Ct. App.", "jurisdiction": "us",
+    "container-title": "W. App. R.", "volume": "88", "page": "201",
+    "issued": {"date-parts": [[2022, 6, 2]]}
+  },
+  {
+    "id": "statute", "type": "legislation", "title": "Fictional Notice Act",
+    "jurisdiction": "us", "container-title": "Westmarch Code", "section": "4",
+    "edition": "official ed.", "issued": {"date-parts": [[2025]]}
+  },
+  {
+    "id": "regulation", "type": "regulation", "title": "Fictional Notice Procedure",
+    "jurisdiction": "us", "container-title": "Westmarch Admin. Code", "volume": "9",
+    "section": "12.3", "edition": "annual ed.", "issued": {"date-parts": [[2025]]}
+  },
+  {
+    "id": "bar", "type": "report", "genre": "bar-opinion", "title": "Fictional Notice Ethics",
+    "authority": "Westmarch Bar Ethics Comm.", "jurisdiction": "us", "number": "26-01",
+    "issued": {"date-parts": [[2026]]}
+  },
+  {
+    "id": "journal", "type": "article-journal", "title": "Delay and Imaginary Notice Duties",
+    "author": [{"given": "Adaeze", "family": "Okafor"}], "container-title": "J. Imaginary Privacy L.",
+    "volume": "7", "page": "61-104", "issued": {"date-parts": [[2020]]}
+  },
+  {
+    "id": "book", "type": "book", "title": "Notice and Its Discontents",
+    "author": [{"given": "Tove", "family": "Lindqvist"}], "publisher": "Example University Press",
+    "edition": "2", "issued": {"date-parts": [[2018]]}
+  },
+  {
+    "id": "web", "type": "webpage", "title": "Fictional Notice Project",
+    "author": [{"literal": "Imaginary Law Institute"}], "container-title": "Example Project",
+    "URL": "https://example.org/fictional-notice", "issued": {"date-parts": [[2026, 1, 2]]},
+    "accessed": {"date-parts": [[2026, 10, 1]]}
+  }
+]

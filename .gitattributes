@@ -1,0 +1,3 @@
+# PROVENANCE: written-by codex/gpt-6; 2026-11-13; commit in Git and .provenance/ledger.jsonl.
+# Preserve upstream license bytes, including its Debian indentation.
+vendor/tex-gyre-LICENSE.txt -whitespace

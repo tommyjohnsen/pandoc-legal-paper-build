@@ -1,0 +1,54 @@
+{
+  "pandoc": "pandoc 3.6.4",
+  "node": "v22.14.0",
+  "python": "3.12.3",
+  "tectonic": "tectonic 0.15.0Tectonic 0.15.0",
+  "font": "Liberation Serif",
+  "font_size_pt": 12.0,
+  "note_size_pt": 10.0,
+  "margin_in": 1.0,
+  "double_spaced_main_text": true,
+  "pdf_small_caps_font": "TeX Gyre Termes",
+  "guide_font_match": false,
+  "tex_bundle_id": "6ffe055852f8faf66c0acbe1a7fb27f87b869a90bad1204f3bf4d9683f597c7c",
+  "font_files": {
+    "LiberationSerif-Bold.ttf": "9e66c25e20868756bf12eb24a520a4552727c9cd108f577f7ae33e3c0110e39c",
+    "LiberationSerif-BoldItalic.ttf": "379010e87421a883f7bbfa7936d23dfe0257a54ce850819b74556e9f2c615a8a",
+    "LiberationSerif-Italic.ttf": "eaeaf7f2b12544ecde64290c1fa7ec403ff70fd58b313637b265400b20249242",
+    "LiberationSerif-Regular.ttf": "705903ae1382f0150f115d6f10a30f5b2f3d6ade649c474afe6366c39174fb65"
+  },
+  "inputs": {
+    "academic.md": "e21b81eeafb84e7b06ef430f44622b8a95c9f53ebba8feebac29c75a09dabbf5",
+    "academic-references.json": "caa6426362ce387218dbc5c419791714cdf464b5b977d37ffd7255ef771f14ac",
+    "academic-legal.csl": "2c39a629cf14da986a9150996f2f2b49dd8fc806adae3277f727e562312a16be",
+    "locales-en-US.xml": "ac864c7c21166b4390d82c31792cdc509400727fa0060b43d8aa17e07f9cb079",
+    "package-lock.json": "508f57f6c98dcf2c552612f34652d140bbef89a18a45283c8a5e66b40fc33b43"
+  },
+  "build_code": {
+    "scripts/build_academic.py": "e2443de6dec3f3912ec10cdd8d51990092e026ae5a5a0e05ba74c45460e3ae2e",
+    "scripts/academic.mjs": "7633be1545651ec91fc11a879a36bc952305f749745c40c99c9c0911262e7cb8",
+    "scripts/verify_outputs.py": "47351196ddf60400fa8c0a0ee70101978a3fc79bcff6520bfc8e5458d84f6d30",
+    "scripts/derive_style.py": "60a966206887c7f5294da8964ec80fa81634d1bb27cf60d34d3a94e18bde648d",
+    "tools/dependencies.lock.json": "da0ce9e4e59be575ca1468311bc514b0d372363f75776dd3e748147ed1684629"
+  },
+  "outputs": {
+    "paper.pdf": "134b811a1e747fc8ba5c19f7f93622a3f11aeeea933c9be307e770952f3f161a",
+    ".uuid": "4a27a0e7b4b4e30dd1a58a0a662fbbc775c14c58e669b079bb8aa917c883b583",
+    "verification.json": "450312dfe5b178b2381e96150e6a55adef7146c8ef51b8509aba808f3030040b",
+    "paper.aux": "8658bc0ca92a7d2e6f37dda4296b7ebb1c916b8659ab9bd93e3508c4085bf00f",
+    "source.json": "e60a015feac0f1ffb703ff09ea56975362769e7602a4616e509cbe1bb09e5c82",
+    "counts.json": "331e8d5e9451f9d74db80b823b4f2578ffa27875d2d4d7bd6ac3ba34fa748722",
+    "reference.docx": "173d7af97808c8019af592dc7cfa16cbba5396a95b78e06709f037aa9b35003a",
+    "layout.tex": "5375dfef2c11cc7b999517d9a039e33168eb7069d533ed3d804e8cbe9af8614d",
+    "citations.json": "2518df69974b467b6578b65c90c98f99bcfe12fb3abd87326969ae0a3a6f7260",
+    "resolved.json": "0b11d7cdcc9a3629b6b26220aa7132da48a4c4de0573a066cc7ca5b6e6b50d92",
+    "paper.docx": "9f9a6889f27412a13d05b5897206adce53b8318e6097fc1854407c3f3cabf665",
+    "layout-settings.json": "9a360c52ff3aeb11e768d74187e2e5822cbbee736d7876c60e4958f4dbae541e",
+    "paper.log": "18fdd8fbf4b5a15d6f5326e8c96915fa75b8bc0c1fbbe112409e62e310232771",
+    "paper.tex": "ba0a95dbc028a3e62d6807cdd820fd2e6498da89e91601b457c0104447a7eb96",
+    "fonts.conf": "b4b935c25fbf7ee180b8398fb8f128d2c5d9b6b36691df6ce3d3ee0609080a62",
+    "texgyretermes-regular.otf": "cc3fe7c707b81428d23d54df3eadd9228a2bf6a4d43125d94df56f5f63134659"
+  },
+  "source_date_epoch": "1794528000",
+  "reproducibility": "Pinned toolchain and shared citation graph; PDF/DOCX container timestamps may differ. See docs/academic.md."
+}

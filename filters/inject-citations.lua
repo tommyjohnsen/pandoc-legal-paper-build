@@ -1,3 +1,4 @@
+-- PROVENANCE: modified-by codex/gpt-6; 2026-11-13; commit in Git and .provenance/ledger.jsonl.
 -- Replace each Cite with citations pre-rendered by scripts/render-cslm.mjs
 -- (in document order), fill the #refs div with wrapped bibliography entries,
 -- and remove the div when there is no bibliography.
@@ -20,12 +21,13 @@ end
 
 local function replace_cite(c)
   i = i + 1
-  return html_inlines(rendered.html[i] or '[missing citation]')
+  return html_inlines(assert(rendered.html[i], 'Missing rendered citation; regenerate citations.json for this source.'))
 end
 
 function Pandoc(doc)
   load(doc.meta)
   doc = doc:walk({ Cite = replace_cite })
+  assert(i == #rendered.html, 'Citation count mismatch; regenerate citations.json for this source.')
   local bib = pandoc.Blocks{}
   for n, entry in ipairs(rendered.bibliography_html or {}) do
     bib:insert(pandoc.Div(pandoc.read(entry, 'html').blocks,
