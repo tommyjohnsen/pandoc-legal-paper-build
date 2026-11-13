@@ -1,0 +1,168 @@
+node tests/academic.test.mjs
+TAP version 13
+# Subtest: synthetic corpus: all seven source classes, native note graph, stable Id/supra targets
+ok 1 - synthetic corpus: all seven source classes, native note graph, stable Id/supra targets
+  ---
+  duration_ms: 354.149035
+  ...
+# Subtest: locator 12 survives citation rendering
+ok 2 - locator 12 survives citation rendering
+  ---
+  duration_ms: 41.346581
+  ...
+# Subtest: locator p. 12 survives citation rendering
+ok 3 - locator p. 12 survives citation rendering
+  ---
+  duration_ms: 40.90163
+  ...
+# Subtest: locator pp. 12--15 survives citation rendering
+ok 4 - locator pp. 12--15 survives citation rendering
+  ---
+  duration_ms: 50.294367
+  ...
+# Subtest: locator § 4(a)(2) survives citation rendering
+ok 5 - locator § 4(a)(2) survives citation rendering
+  ---
+  duration_ms: 73.439446
+  ...
+# Subtest: locator sec. 4 survives citation rendering
+ok 6 - locator sec. 4 survives citation rendering
+  ---
+  duration_ms: 61.823631
+  ...
+# Subtest: locator para. 12 survives citation rendering
+ok 7 - locator para. 12 survives citation rendering
+  ---
+  duration_ms: 50.727278
+  ...
+# Subtest: locator ¶ 12 survives citation rendering
+ok 8 - locator ¶ 12 survives citation rendering
+  ---
+  duration_ms: 69.336452
+  ...
+# Subtest: locator n. 4 survives citation rendering
+ok 9 - locator n. 4 survives citation rendering
+  ---
+  duration_ms: 70.203123
+  ...
+# Subtest: locator ch. 2 survives citation rendering
+ok 10 - locator ch. 2 survives citation rendering
+  ---
+  duration_ms: 58.758588
+  ...
+# Subtest: ordinary and inline Markdown notes stay single notes with citations and prose
+ok 11 - ordinary and inline Markdown notes stay single notes with citations and prose
+  ---
+  duration_ms: 78.363707
+  ...
+# Subtest: explanatory-note punctuation preserves sentence continuation and avoids duplicate periods
+ok 12 - explanatory-note punctuation preserves sentence continuation and avoids duplicate periods
+  ---
+  duration_ms: 63.186399
+  ...
+# Subtest: prose, multi-authority, affixes and explanatory notes break Id eligibility
+ok 13 - prose, multi-authority, affixes and explanatory notes break Id eligibility
+  ---
+  duration_ms: 198.54318
+  ...
+# Subtest: ambiguous same-author works retain full forms and actionable review flags
+ok 14 - ambiguous same-author works retain full forms and actionable review flags
+  ---
+  duration_ms: 68.672771
+  ...
+# Subtest: case repeat without pinpoint retains full form
+ok 15 - case repeat without pinpoint retains full form
+  ---
+  duration_ms: 53.504191
+  ...
+# Subtest: bar authority is not duplicated by institutional author metadata
+ok 16 - bar authority is not duplicated by institutional author metadata
+  ---
+  duration_ms: 48.935566
+  ...
+# Subtest: reject @book
+ok 17 - reject @book
+  ---
+  duration_ms: 15.691588
+  ...
+# Subtest: reject [-@book]
+ok 18 - reject [-@book]
+  ---
+  duration_ms: 14.598815
+  ...
+# Subtest: reject [@unknown]
+ok 19 - reject [@unknown]
+  ---
+  duration_ms: 15.128295
+  ...
+# Subtest: reject [@book, appendix A]
+ok 20 - reject [@book, appendix A]
+  ---
+  duration_ms: 13.998682
+  ...
+# Subtest: reject [@book, 12, 14]
+ok 21 - reject [@book, 12, 14]
+  ---
+  duration_ms: 14.090433
+  ...
+# Subtest: reject [*see* @book, 12]
+ok 22 - reject [*see* @book, 12]
+  ---
+  duration_ms: 14.036742
+  ...
+# Subtest: reject \# Title [@book]
+ok 23 - reject \# Title [@book]
+  ---
+  duration_ms: 14.73
+  ...
+# Subtest: reject Text. <b>raw</b>
+ok 24 - reject Text. <b>raw</b>
+  ---
+  duration_ms: 14.197464
+  ...
+# Subtest: reject ---\\ntitle: "Title [@book]"\\n---\\nText.
+ok 25 - reject ---\\ntitle: "Title [@book]"\\n---\\nText.
+  ---
+  duration_ms: 14.524606
+  ...
+# Subtest: reject Text.\\n\\n| Citation |\\n|---|\\n| [@book] |
+ok 26 - reject Text.\\n\\n| Citation |\\n|---|\\n| [@book] |
+  ---
+  duration_ms: 14.419439
+  ...
+# Subtest: missing legal metadata fails with the key and required field
+ok 27 - missing legal metadata fails with the key and required field
+  ---
+  duration_ms: 1.299891
+  ...
+# Subtest: invalid years, duplicate keys and unsupported source types fail
+ok 28 - invalid years, duplicate keys and unsupported source types fail
+  ---
+  duration_ms: 0.420316
+  ...
+# Subtest: legacy Juris-M explicitly rejects notes, author modes, prefixes and ambiguous suffixes
+ok 29 - legacy Juris-M explicitly rejects notes, author modes, prefixes and ambiguous suffixes
+  ---
+  duration_ms: 537.190141
+  ...
+1..29
+# tests 29
+# suites 0
+# pass 29
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 2089.517973
+python3 -m unittest discover -s tests -p 'test_*.py' -v
+test_configurable_font_size_note_size_and_margins (test_academic.AcademicTests.test_configurable_font_size_note_size_and_margins) ... ok
+test_existing_output_is_preserved (test_academic.AcademicTests.test_existing_output_is_preserved) ... ok
+test_missing_font_fails_without_creating_an_output (test_academic.AcademicTests.test_missing_font_fails_without_creating_an_output) ... ok
+test_word_separation_independent_of_footnote_length (test_academic.AcademicTests.test_word_separation_independent_of_footnote_length) ... ok
+
+----------------------------------------------------------------------
+Ran 4 tests in 0.459s
+
+OK
+python3 scripts/check_vendor.py
+All vendored style, locale and font checksums match.

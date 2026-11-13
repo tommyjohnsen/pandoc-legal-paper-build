@@ -1,0 +1,893 @@
+{
+  "processor": "1.4.61",
+  "sourceMetadata": [
+    {
+      "id": "case",
+      "type": "legal_case",
+      "title": "Harlow v. Quill Data Services",
+      "title-short": "Harlow",
+      "authority": "Westmarch Ct. App.",
+      "jurisdiction": "us",
+      "container-title": "W. App. R.",
+      "volume": "88",
+      "page": "201",
+      "issued": {
+        "date-parts": [
+          [
+            2022,
+            6,
+            2
+          ]
+        ]
+      }
+    },
+    {
+      "id": "statute",
+      "type": "legislation",
+      "title": "Fictional Notice Act",
+      "jurisdiction": "us",
+      "container-title": "Westmarch Code",
+      "section": "4",
+      "edition": "official ed.",
+      "issued": {
+        "date-parts": [
+          [
+            2025
+          ]
+        ]
+      }
+    },
+    {
+      "id": "regulation",
+      "type": "regulation",
+      "title": "Fictional Notice Procedure",
+      "jurisdiction": "us",
+      "container-title": "Westmarch Admin. Code",
+      "volume": "9",
+      "section": "12.3",
+      "edition": "annual ed.",
+      "issued": {
+        "date-parts": [
+          [
+            2025
+          ]
+        ]
+      }
+    },
+    {
+      "id": "bar",
+      "type": "report",
+      "genre": "bar-opinion",
+      "title": "Fictional Notice Ethics",
+      "authority": "Westmarch Bar Ethics Comm.",
+      "jurisdiction": "us",
+      "number": "26-01",
+      "issued": {
+        "date-parts": [
+          [
+            2026
+          ]
+        ]
+      }
+    },
+    {
+      "id": "journal",
+      "type": "article-journal",
+      "title": "Delay and Imaginary Notice Duties",
+      "author": [
+        {
+          "given": "Adaeze",
+          "family": "Okafor"
+        }
+      ],
+      "container-title": "J. Imaginary Privacy L.",
+      "volume": "7",
+      "page": "61-104",
+      "issued": {
+        "date-parts": [
+          [
+            2020
+          ]
+        ]
+      }
+    },
+    {
+      "id": "book",
+      "type": "book",
+      "title": "Notice and Its Discontents",
+      "author": [
+        {
+          "given": "Tove",
+          "family": "Lindqvist"
+        }
+      ],
+      "publisher": "Example University Press",
+      "edition": "2",
+      "issued": {
+        "date-parts": [
+          [
+            2018
+          ]
+        ]
+      }
+    },
+    {
+      "id": "web",
+      "type": "webpage",
+      "title": "Fictional Notice Project",
+      "author": [
+        {
+          "literal": "Imaginary Law Institute"
+        }
+      ],
+      "container-title": "Example Project",
+      "URL": "https://example.org/fictional-notice",
+      "issued": {
+        "date-parts": [
+          [
+            2026,
+            1,
+            2
+          ]
+        ]
+      },
+      "accessed": {
+        "date-parts": [
+          [
+            2026,
+            10,
+            1
+          ]
+        ]
+      }
+    }
+  ],
+  "notes": 20,
+  "clusters": [
+    {
+      "index": 0,
+      "note": 1,
+      "items": [
+        {
+          "id": "case",
+          "label": "page",
+          "locator": "214",
+          "item": {
+            "id": "case",
+            "type": "legal_case",
+            "title": "Harlow v. Quill Data Services",
+            "title-short": "Harlow",
+            "authority": "Westmarch Ct. App.",
+            "jurisdiction": "us",
+            "container-title": "W. App. R.",
+            "volume": "88",
+            "page": "201",
+            "issued": {
+              "year": 2022,
+              "month": 6,
+              "day": 2
+            },
+            "page-first": "201",
+            "country": "us"
+          }
+        }
+      ],
+      "html": "Harlow v. Quill Data Services, 88 W. App. R. 201, 214 (Westmarch Ct. App. 2022)."
+    },
+    {
+      "index": 1,
+      "note": 2,
+      "items": [
+        {
+          "id": "case",
+          "label": "page",
+          "locator": "215",
+          "item": {
+            "id": "case",
+            "type": "legal_case",
+            "title": "Harlow v. Quill Data Services",
+            "title-short": "Harlow",
+            "authority": "Westmarch Ct. App.",
+            "jurisdiction": "us",
+            "container-title": "W. App. R.",
+            "volume": "88",
+            "page": "201",
+            "issued": {
+              "year": 2022,
+              "month": 6,
+              "day": 2
+            },
+            "page-first": "201",
+            "country": "us"
+          }
+        }
+      ],
+      "html": "<i>Id.</i> at 215."
+    },
+    {
+      "index": 2,
+      "note": 3,
+      "items": [
+        {
+          "id": "case",
+          "label": "page",
+          "locator": "215",
+          "item": {
+            "id": "case",
+            "type": "legal_case",
+            "title": "Harlow v. Quill Data Services",
+            "title-short": "Harlow",
+            "authority": "Westmarch Ct. App.",
+            "jurisdiction": "us",
+            "container-title": "W. App. R.",
+            "volume": "88",
+            "page": "201",
+            "issued": {
+              "year": 2022,
+              "month": 6,
+              "day": 2
+            },
+            "page-first": "201",
+            "country": "us"
+          }
+        }
+      ],
+      "html": "<i>Id.</i>"
+    },
+    {
+      "index": 3,
+      "note": 4,
+      "items": [
+        {
+          "id": "journal",
+          "label": "page",
+          "locator": "88–90",
+          "item": {
+            "id": "journal",
+            "type": "article-journal",
+            "title": "Delay and Imaginary Notice Duties",
+            "author": [
+              {
+                "given": "Adaeze",
+                "family": "Okafor"
+              }
+            ],
+            "container-title": "J. Imaginary Privacy L.",
+            "volume": "7",
+            "page": "61-104",
+            "issued": {
+              "year": 2020
+            },
+            "page-first": "61"
+          }
+        }
+      ],
+      "html": "Adaeze Okafor, <i>Delay and Imaginary Notice Duties</i>, 7 <span style=\"font-variant:small-caps;\">J. Imaginary Privacy L.</span> 61, 88–90 (2020)."
+    },
+    {
+      "index": 4,
+      "note": 5,
+      "items": [
+        {
+          "id": "book",
+          "label": "page",
+          "locator": "12",
+          "item": {
+            "id": "book",
+            "type": "book",
+            "title": "Notice and Its Discontents",
+            "author": [
+              {
+                "given": "Tove",
+                "family": "Lindqvist"
+              }
+            ],
+            "publisher": "Example University Press",
+            "edition": "2",
+            "issued": {
+              "year": 2018
+            }
+          }
+        }
+      ],
+      "html": "<span style=\"font-variant:small-caps;\">Tove Lindqvist</span>, <span style=\"font-variant:small-caps;\">Notice and Its Discontents</span> 12 (2nd ed. 2018)."
+    },
+    {
+      "index": 5,
+      "note": 6,
+      "items": [
+        {
+          "id": "journal",
+          "label": "page",
+          "locator": "92",
+          "item": {
+            "id": "journal",
+            "type": "article-journal",
+            "title": "Delay and Imaginary Notice Duties",
+            "author": [
+              {
+                "given": "Adaeze",
+                "family": "Okafor"
+              }
+            ],
+            "container-title": "J. Imaginary Privacy L.",
+            "volume": "7",
+            "page": "61-104",
+            "issued": {
+              "year": 2020
+            },
+            "page-first": "61"
+          }
+        }
+      ],
+      "html": "Okafor, <i>supra</i> note 4 at 92."
+    },
+    {
+      "index": 6,
+      "note": 7,
+      "items": [
+        {
+          "id": "statute",
+          "label": "section",
+          "locator": "4(a)(2)",
+          "item": {
+            "id": "statute",
+            "type": "legislation",
+            "title": "Fictional Notice Act",
+            "jurisdiction": "us",
+            "container-title": "Westmarch Code",
+            "section": "4",
+            "edition": "official ed.",
+            "issued": {
+              "year": 2025
+            },
+            "country": "us"
+          }
+        }
+      ],
+      "html": "Fictional Notice Act, Westmarch Code § 4(a)(2) (official ed. 2025)."
+    },
+    {
+      "index": 7,
+      "note": 8,
+      "items": [
+        {
+          "id": "regulation",
+          "label": "section",
+          "locator": "12.3(b)",
+          "item": {
+            "id": "regulation",
+            "type": "legislation",
+            "title": "Fictional Notice Procedure",
+            "jurisdiction": "us",
+            "container-title": "Westmarch Admin. Code",
+            "volume": "9",
+            "section": "12.3",
+            "edition": "annual ed.",
+            "issued": {
+              "year": 2025
+            },
+            "country": "us"
+          }
+        }
+      ],
+      "html": "Fictional Notice Procedure, 9 Westmarch Admin. Code § 12.3(b) (annual ed. 2025)."
+    },
+    {
+      "index": 8,
+      "note": 9,
+      "items": [
+        {
+          "id": "bar",
+          "label": "paragraph",
+          "locator": "7",
+          "item": {
+            "id": "bar",
+            "type": "report",
+            "genre": "bar-opinion",
+            "title": "Fictional Notice Ethics",
+            "authority": "Westmarch Bar Ethics Comm.",
+            "jurisdiction": "us",
+            "number": "26-01",
+            "issued": {
+              "year": 2026
+            },
+            "title-short": "26-01",
+            "country": "us"
+          }
+        }
+      ],
+      "html": "Westmarch Bar Ethics Comm., Fictional Notice Ethics, Formal Op. 26-01, para. 7 (2026)."
+    },
+    {
+      "index": 9,
+      "note": 10,
+      "items": [
+        {
+          "id": "web",
+          "label": "paragraph",
+          "locator": "3",
+          "item": {
+            "id": "web",
+            "type": "webpage",
+            "title": "Fictional Notice Project",
+            "author": [
+              {
+                "literal": "Imaginary Law Institute"
+              }
+            ],
+            "container-title": "Example Project",
+            "URL": "https://example.org/fictional-notice",
+            "issued": {
+              "year": 2026,
+              "month": 1,
+              "day": 2
+            },
+            "accessed": {
+              "year": 2026,
+              "month": 10,
+              "day": 1
+            }
+          }
+        }
+      ],
+      "html": "Imaginary Law Institute, <i>Fictional Notice Project</i>, <span style=\"font-variant:small-caps;\">Example Project</span> para. 3 (Jan. 2, 2026), https://example.org/fictional-notice."
+    },
+    {
+      "index": 10,
+      "note": 11,
+      "items": [
+        {
+          "id": "book",
+          "label": "page",
+          "locator": "15–17",
+          "item": {
+            "id": "book",
+            "type": "book",
+            "title": "Notice and Its Discontents",
+            "author": [
+              {
+                "given": "Tove",
+                "family": "Lindqvist"
+              }
+            ],
+            "publisher": "Example University Press",
+            "edition": "2",
+            "issued": {
+              "year": 2018
+            }
+          }
+        }
+      ],
+      "html": "<span style=\"font-variant:small-caps;\">Lindqvist</span>, <i>supra</i> note 5 at 15–17."
+    },
+    {
+      "index": 11,
+      "note": 12,
+      "items": [
+        {
+          "id": "case",
+          "label": "page",
+          "locator": "219",
+          "item": {
+            "id": "case",
+            "type": "legal_case",
+            "title": "Harlow v. Quill Data Services",
+            "title-short": "Harlow",
+            "authority": "Westmarch Ct. App.",
+            "jurisdiction": "us",
+            "container-title": "W. App. R.",
+            "volume": "88",
+            "page": "201",
+            "issued": {
+              "year": 2022,
+              "month": 6,
+              "day": 2
+            },
+            "page-first": "201",
+            "country": "us"
+          }
+        }
+      ],
+      "html": "<i>Harlow</i>, 88 W. App. R. at 219."
+    },
+    {
+      "index": 12,
+      "note": 13,
+      "items": [
+        {
+          "id": "case",
+          "prefix": "see ",
+          "label": "page",
+          "locator": "220",
+          "suffix": ", discussing timing",
+          "item": {
+            "id": "case",
+            "type": "legal_case",
+            "title": "Harlow v. Quill Data Services",
+            "title-short": "Harlow",
+            "authority": "Westmarch Ct. App.",
+            "jurisdiction": "us",
+            "container-title": "W. App. R.",
+            "volume": "88",
+            "page": "201",
+            "issued": {
+              "year": 2022,
+              "month": 6,
+              "day": 2
+            },
+            "page-first": "201",
+            "country": "us"
+          }
+        },
+        {
+          "id": "journal",
+          "prefix": "cf. ",
+          "label": "page",
+          "locator": "93",
+          "item": {
+            "id": "journal",
+            "type": "article-journal",
+            "title": "Delay and Imaginary Notice Duties",
+            "author": [
+              {
+                "given": "Adaeze",
+                "family": "Okafor"
+              }
+            ],
+            "container-title": "J. Imaginary Privacy L.",
+            "volume": "7",
+            "page": "61-104",
+            "issued": {
+              "year": 2020
+            },
+            "page-first": "61"
+          }
+        }
+      ],
+      "html": "see Harlow v. Quill Data Services, 88 W. App. R. 201, 220 (Westmarch Ct. App. 2022), discussing timing; cf. Adaeze Okafor, <i>Delay and Imaginary Notice Duties</i>, 7 <span style=\"font-variant:small-caps;\">J. Imaginary Privacy L.</span> 61, 93 (2020)."
+    },
+    {
+      "index": 13,
+      "note": 14,
+      "items": [
+        {
+          "id": "case",
+          "label": "page",
+          "locator": "221–223",
+          "item": {
+            "id": "case",
+            "type": "legal_case",
+            "title": "Harlow v. Quill Data Services",
+            "title-short": "Harlow",
+            "authority": "Westmarch Ct. App.",
+            "jurisdiction": "us",
+            "container-title": "W. App. R.",
+            "volume": "88",
+            "page": "201",
+            "issued": {
+              "year": 2022,
+              "month": 6,
+              "day": 2
+            },
+            "page-first": "201",
+            "country": "us"
+          }
+        }
+      ],
+      "html": "Harlow v. Quill Data Services, 88 W. App. R. 201, 221–223 (Westmarch Ct. App. 2022)."
+    },
+    {
+      "index": 14,
+      "note": 15,
+      "items": [
+        {
+          "id": "statute",
+          "label": "section",
+          "locator": "5(b)",
+          "item": {
+            "id": "statute",
+            "type": "legislation",
+            "title": "Fictional Notice Act",
+            "jurisdiction": "us",
+            "container-title": "Westmarch Code",
+            "section": "4",
+            "edition": "official ed.",
+            "issued": {
+              "year": 2025
+            },
+            "country": "us"
+          }
+        }
+      ],
+      "html": "Fictional Notice Act, Westmarch Code § 5(b) (official ed. 2025)."
+    },
+    {
+      "index": 15,
+      "note": 16,
+      "items": [
+        {
+          "id": "journal",
+          "label": "page",
+          "locator": "94",
+          "item": {
+            "id": "journal",
+            "type": "article-journal",
+            "title": "Delay and Imaginary Notice Duties",
+            "author": [
+              {
+                "given": "Adaeze",
+                "family": "Okafor"
+              }
+            ],
+            "container-title": "J. Imaginary Privacy L.",
+            "volume": "7",
+            "page": "61-104",
+            "issued": {
+              "year": 2020
+            },
+            "page-first": "61"
+          }
+        }
+      ],
+      "html": "Adaeze Okafor, <i>Delay and Imaginary Notice Duties</i>, 7 <span style=\"font-variant:small-caps;\">J. Imaginary Privacy L.</span> 61, 94 (2020)"
+    },
+    {
+      "index": 16,
+      "note": 16,
+      "items": [
+        {
+          "id": "book",
+          "label": "chapter",
+          "locator": "2",
+          "item": {
+            "id": "book",
+            "type": "book",
+            "title": "Notice and Its Discontents",
+            "author": [
+              {
+                "given": "Tove",
+                "family": "Lindqvist"
+              }
+            ],
+            "publisher": "Example University Press",
+            "edition": "2",
+            "issued": {
+              "year": 2018
+            }
+          }
+        }
+      ],
+      "html": "<span style=\"font-variant:small-caps;\">Tove Lindqvist</span>, <span style=\"font-variant:small-caps;\">Notice and Its Discontents</span> chap. 2 (2nd ed. 2018)"
+    },
+    {
+      "index": 17,
+      "note": 18,
+      "items": [
+        {
+          "id": "book",
+          "label": "page",
+          "locator": "20",
+          "item": {
+            "id": "book",
+            "type": "book",
+            "title": "Notice and Its Discontents",
+            "author": [
+              {
+                "given": "Tove",
+                "family": "Lindqvist"
+              }
+            ],
+            "publisher": "Example University Press",
+            "edition": "2",
+            "issued": {
+              "year": 2018
+            }
+          }
+        }
+      ],
+      "html": "<span style=\"font-variant:small-caps;\">Lindqvist</span>, <i>supra</i> note 5 at 20."
+    },
+    {
+      "index": 18,
+      "note": 19,
+      "items": [
+        {
+          "id": "case",
+          "label": "paragraph",
+          "locator": "24",
+          "item": {
+            "id": "case",
+            "type": "legal_case",
+            "title": "Harlow v. Quill Data Services",
+            "title-short": "Harlow",
+            "authority": "Westmarch Ct. App.",
+            "jurisdiction": "us",
+            "container-title": "W. App. R.",
+            "volume": "88",
+            "page": "201",
+            "issued": {
+              "year": 2022,
+              "month": 6,
+              "day": 2
+            },
+            "page-first": "201",
+            "country": "us"
+          }
+        }
+      ],
+      "html": "Harlow v. Quill Data Services, 88 W. App. R. 201, para. 24 (Westmarch Ct. App. 2022)."
+    },
+    {
+      "index": 19,
+      "note": 20,
+      "items": [
+        {
+          "id": "journal",
+          "label": "note",
+          "locator": "4",
+          "item": {
+            "id": "journal",
+            "type": "article-journal",
+            "title": "Delay and Imaginary Notice Duties",
+            "author": [
+              {
+                "given": "Adaeze",
+                "family": "Okafor"
+              }
+            ],
+            "container-title": "J. Imaginary Privacy L.",
+            "volume": "7",
+            "page": "61-104",
+            "issued": {
+              "year": 2020
+            },
+            "page-first": "61"
+          }
+        }
+      ],
+      "html": "Adaeze Okafor, <i>Delay and Imaginary Notice Duties</i>, 7 <span style=\"font-variant:small-caps;\">J. Imaginary Privacy L.</span> 61, n. 4 (2020)."
+    }
+  ],
+  "warnings": [
+    {
+      "note": 2,
+      "key": "case",
+      "code": "REPEAT_REVIEW",
+      "message": "Check repeated citation: Id. context or supra first-note target, title ambiguity and pinpoints against the required Bluebook edition."
+    },
+    {
+      "note": 3,
+      "key": "case",
+      "code": "REPEAT_REVIEW",
+      "message": "Check repeated citation: Id. context or supra first-note target, title ambiguity and pinpoints against the required Bluebook edition."
+    },
+    {
+      "note": 6,
+      "key": "journal",
+      "code": "REPEAT_REVIEW",
+      "message": "Check repeated citation: Id. context or supra first-note target, title ambiguity and pinpoints against the required Bluebook edition."
+    },
+    {
+      "note": 7,
+      "code": "FULL_FORM",
+      "message": "Full citation retained: complex context/affix, ambiguous author, non-page locator, or source without supported short form. Review signals, parentheticals and any desired short form."
+    },
+    {
+      "note": 8,
+      "code": "FULL_FORM",
+      "message": "Full citation retained: complex context/affix, ambiguous author, non-page locator, or source without supported short form. Review signals, parentheticals and any desired short form."
+    },
+    {
+      "note": 9,
+      "code": "FULL_FORM",
+      "message": "Full citation retained: complex context/affix, ambiguous author, non-page locator, or source without supported short form. Review signals, parentheticals and any desired short form."
+    },
+    {
+      "note": 10,
+      "code": "FULL_FORM",
+      "message": "Full citation retained: complex context/affix, ambiguous author, non-page locator, or source without supported short form. Review signals, parentheticals and any desired short form."
+    },
+    {
+      "note": 11,
+      "key": "book",
+      "code": "REPEAT_REVIEW",
+      "message": "Check repeated citation: Id. context or supra first-note target, title ambiguity and pinpoints against the required Bluebook edition."
+    },
+    {
+      "note": 12,
+      "key": "case",
+      "code": "REPEAT_REVIEW",
+      "message": "Check repeated citation: Id. context or supra first-note target, title ambiguity and pinpoints against the required Bluebook edition."
+    },
+    {
+      "note": 13,
+      "code": "FULL_FORM",
+      "message": "Full citation retained: complex context/affix, ambiguous author, non-page locator, or source without supported short form. Review signals, parentheticals and any desired short form."
+    },
+    {
+      "note": 13,
+      "key": "case",
+      "code": "REPEAT_REVIEW",
+      "message": "Check repeated citation: Id. context or supra first-note target, title ambiguity and pinpoints against the required Bluebook edition."
+    },
+    {
+      "note": 13,
+      "key": "journal",
+      "code": "REPEAT_REVIEW",
+      "message": "Check repeated citation: Id. context or supra first-note target, title ambiguity and pinpoints against the required Bluebook edition."
+    },
+    {
+      "note": 14,
+      "code": "FULL_FORM",
+      "message": "Full citation retained: complex context/affix, ambiguous author, non-page locator, or source without supported short form. Review signals, parentheticals and any desired short form."
+    },
+    {
+      "note": 14,
+      "key": "case",
+      "code": "REPEAT_REVIEW",
+      "message": "Check repeated citation: Id. context or supra first-note target, title ambiguity and pinpoints against the required Bluebook edition."
+    },
+    {
+      "note": 15,
+      "code": "FULL_FORM",
+      "message": "Full citation retained: complex context/affix, ambiguous author, non-page locator, or source without supported short form. Review signals, parentheticals and any desired short form."
+    },
+    {
+      "note": 15,
+      "key": "statute",
+      "code": "REPEAT_REVIEW",
+      "message": "Check repeated citation: Id. context or supra first-note target, title ambiguity and pinpoints against the required Bluebook edition."
+    },
+    {
+      "note": 16,
+      "code": "FULL_FORM",
+      "message": "Full citation retained: complex context/affix, ambiguous author, non-page locator, or source without supported short form. Review signals, parentheticals and any desired short form."
+    },
+    {
+      "note": 16,
+      "key": "journal",
+      "code": "REPEAT_REVIEW",
+      "message": "Check repeated citation: Id. context or supra first-note target, title ambiguity and pinpoints against the required Bluebook edition."
+    },
+    {
+      "note": 16,
+      "code": "FULL_FORM",
+      "message": "Full citation retained: complex context/affix, ambiguous author, non-page locator, or source without supported short form. Review signals, parentheticals and any desired short form."
+    },
+    {
+      "note": 16,
+      "key": "book",
+      "code": "REPEAT_REVIEW",
+      "message": "Check repeated citation: Id. context or supra first-note target, title ambiguity and pinpoints against the required Bluebook edition."
+    },
+    {
+      "note": 18,
+      "key": "book",
+      "code": "REPEAT_REVIEW",
+      "message": "Check repeated citation: Id. context or supra first-note target, title ambiguity and pinpoints against the required Bluebook edition."
+    },
+    {
+      "note": 19,
+      "code": "FULL_FORM",
+      "message": "Full citation retained: complex context/affix, ambiguous author, non-page locator, or source without supported short form. Review signals, parentheticals and any desired short form."
+    },
+    {
+      "note": 19,
+      "key": "case",
+      "code": "REPEAT_REVIEW",
+      "message": "Check repeated citation: Id. context or supra first-note target, title ambiguity and pinpoints against the required Bluebook edition."
+    },
+    {
+      "note": 20,
+      "code": "FULL_FORM",
+      "message": "Full citation retained: complex context/affix, ambiguous author, non-page locator, or source without supported short form. Review signals, parentheticals and any desired short form."
+    },
+    {
+      "note": 20,
+      "key": "journal",
+      "code": "REPEAT_REVIEW",
+      "message": "Check repeated citation: Id. context or supra first-note target, title ambiguity and pinpoints against the required Bluebook edition."
+    }
+  ]
+}

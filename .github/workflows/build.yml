@@ -1,3 +1,4 @@
+# PROVENANCE: modified-by codex/gpt-6; 2026-11-13; commit in Git and .provenance/ledger.jsonl.
 name: build
 on:
   push:
@@ -7,16 +8,18 @@ permissions:
   contents: read
 jobs:
   sample:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-24.04
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4.2.2
       - name: Build image
         run: docker build -t paper-build .
-      - name: Build both pipelines and the citation diff
-        run: docker run --rm -u "$(id -u):$(id -g)" -e HOME=/tmp -v "$PWD":/work paper-build make all test
+      - name: Build and inspect academic notes, then exercise legacy comparisons
+        run: |
+          mkdir -p build
+          docker run --rm -u "$(id -u):$(id -g)" -e HOME=/tmp -v "$PWD/build":/work/build paper-build make test integration legacy legacy-test
       - name: Show citation diff
         run: cat build/compare/citations.diff || true
-      - uses: actions/upload-artifact@v4
+      - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4.6.2
         with:
           name: sample-outputs
           path: |
@@ -26,4 +29,8 @@ jobs:
             build/jurism/paper.pdf
             build/jurism/citations.json
             build/compare/
+            build/integration/demo/
+            build/integration/altered/
+            build/integration/long-note/
+            build/integration/results.json
           if-no-files-found: error

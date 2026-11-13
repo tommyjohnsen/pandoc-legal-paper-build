@@ -1,0 +1,6 @@
+{
+  "main_text_words": 204,
+  "footnote_words": 281,
+  "footnotes": 20,
+  "method": "Unicode word tokens; metadata excluded, headings/tables included; notes counted after citation rendering. No page-count inference."
+}

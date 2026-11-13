@@ -1,3 +1,9 @@
 build/
 node_modules/
 *.csl
+.tools/
+__pycache__/
+*.pyc
+.uuid
+# Academic styles are preserved with attribution and checksums.
+!vendor/*.csl

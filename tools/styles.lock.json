@@ -1,0 +1,24 @@
+{
+  "downloads": [
+    {
+      "target": "a.csl",
+      "url": "https://raw.githubusercontent.com/citation-style-language/styles/6ba2e9c6aa6e0dab87d3a20b833ed8ff6500f698/bluebook-inline.csl",
+      "sha256": "d7b0b838dc45d5526abf3272000094bb40f0e01f323540c009dd05adfb3cc97e"
+    },
+    {
+      "target": "jm-indigobook.csl",
+      "url": "https://raw.githubusercontent.com/Juris-M/jm-styles/15214e48b1b4e584c8ec0054724f9f51b4f58cd2/jm-indigobook.csl",
+      "sha256": "ca4c962db91283db18994884149a3f90b649a4c84c445ee17a81bbf19362dd38"
+    },
+    {
+      "target": "locales-en-US.xml",
+      "url": "https://raw.githubusercontent.com/citation-style-language/locales/a89adece41013402236e2c9020972d7e931fbab8/locales-en-US.xml",
+      "sha256": "ac864c7c21166b4390d82c31792cdc509400727fa0060b43d8aa17e07f9cb079"
+    },
+    {
+      "target": "modules.tar.gz",
+      "url": "https://codeload.github.com/Juris-M/style-modules/tar.gz/11b9c4ca5ed8aebea66e1ab1ead12761a32d7c84",
+      "sha256": "2203bf8c7fad880cb90a75069ba2d307a53238ca016a2b44bf9fe68f358a0e28"
+    }
+  ]
+}

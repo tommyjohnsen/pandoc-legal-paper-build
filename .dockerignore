@@ -1,0 +1,8 @@
+# PROVENANCE: written-by codex/gpt-6; 2026-11-13; commit in Git and .provenance/ledger.jsonl.
+.git
+.tools
+node_modules
+build
+__pycache__
+**/__pycache__
+demonstration
